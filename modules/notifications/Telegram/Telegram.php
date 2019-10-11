@@ -47,12 +47,12 @@ class Telegram implements NotificationModuleInterface
 		
 		$message = urlencode("Connected with WHMCS");
 		$ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot".$botToken."/sendMessage?chat_id=".$botChatID."&text=".$message);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        $response = curl_exec($ch);
+		curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot".$botToken."/sendMessage?chat_id=".$botChatID."&text=".$message);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		$response = curl_exec($ch);
 
-        if (!$response) { 
+		if (!$response) { 
 			throw new Exception('No response received from API');
 		}
     }
@@ -77,10 +77,10 @@ class Telegram implements NotificationModuleInterface
 		
 		$message = urlencode($messageContent);
 		$ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot".$botToken."/sendMessage?parse_mode=Markdown&chat_id=".$botChatID."&text=".$message);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        $response = curl_exec($ch);
+		curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot".$botToken."/sendMessage?parse_mode=Markdown&chat_id=".$botChatID."&text=".$message);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		$response = curl_exec($ch);
 		
         if (!$response) { 
 			throw new Exception('No response received from API');
