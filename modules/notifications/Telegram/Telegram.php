@@ -82,7 +82,7 @@ class Telegram implements NotificationModuleInterface
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		$response = curl_exec($ch);
 		
-        if (!$response) { 
+       	 	if (!$response) { 
 			throw new Exception('No response received from API');
 		}
     }
